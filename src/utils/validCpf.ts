@@ -7,7 +7,7 @@ const isValidCpf = (cpf:string) => {
 		return false;
 	}
 	const arrayNineNumber = clearMask.split("").slice(0,9);
-	soma = arrayNineNumber.reduce((prev,curr) => prev + parseInt(curr) ,0);
+	soma = arrayNineNumber.reduce((prev,curr,index) => prev + (parseInt(curr) * (11 - (index + 1))) ,0);
 	resto = (soma * 10) % 11;
 	if ((resto === 10) || (resto === 11)) 
 		resto = 0;
@@ -15,7 +15,7 @@ const isValidCpf = (cpf:string) => {
 		return false;
 	}
 	const arrayTeenNumber = clearMask.split("").slice(0,10);
-	soma = arrayTeenNumber.reduce((prev,curr) => prev + parseInt(curr) ,0);
+	soma = arrayTeenNumber.reduce((prev,curr,index) => prev +  (parseInt(curr) * (12 - (index + 1))) ,0);
 	resto = (soma * 10) % 11;
 	if ((resto === 10) || (resto === 11)) 
 		resto = 0;

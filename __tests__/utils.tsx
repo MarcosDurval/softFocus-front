@@ -1,15 +1,14 @@
+// test utils file
 import {render} from "@testing-library/react";
-import { createMemoryHistory } from "history";
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
-const renderWithRouter = (component: React.ReactElement) => {
-	const history = createMemoryHistory();
-	return{
-		...render(
-			<Router navigator={history} location={history.location}> 
-				{component}
-			</Router>
-		),
+const renderWithRouter = (ui:React.ReactElement, {route = "/"} = {}) => {
+	window.history.pushState({}, "Test page", route);
+
+	return {
+		user: userEvent.setup(),
+		...render(ui, {wrapper: BrowserRouter}),
 	};
 };
 

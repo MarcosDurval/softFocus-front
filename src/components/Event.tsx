@@ -4,7 +4,7 @@ const Event = ({handleChange, event}:Change) => {
 	return(
 		<label htmlFor="event">
       Evento ocorrido:
-			<select onChange={handleChange} defaultValue={event || 1} id="event" required>
+			<select onChange={(e) => handleChange(e.target)} name="event" defaultValue={event || ""} id="event" required>
 				{eventPossible.map((value, index) => {
 					return(
 						<option 

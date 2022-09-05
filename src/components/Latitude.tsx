@@ -9,7 +9,7 @@ const Latitude = ({handleChange, latitude}:Change) => {
 				onChange={(e) => handleChange(e.target)}
 				value={latitude || ""}
 				name="latitude"
-				placeholder="ex: 41.40338"
+				placeholder="ex: -26.198338"
 				required
 			/>
 		</label>

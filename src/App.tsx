@@ -1,10 +1,9 @@
-import './styles/_base.scss';
+import AllRouters from "./router";
+import "./styles/_base.scss";
 
 function App() {
 	return (
-		<div className="App">
-			<h1>Iniciando</h1>
-		</div>
+		<AllRouters />
 	);
 }
 

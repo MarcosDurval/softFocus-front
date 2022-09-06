@@ -14,8 +14,8 @@ import {
 	Tillage } from "../components";
 
 import { registerClient } from "../services/request";
-import cpfMask from "../utils/cpfMask";
 
+import cpfMask from "../utils/cpfMask";
 import isValidCpf from "../utils/validCpf";
 import isValidEmail from "../utils/validEmail";
 

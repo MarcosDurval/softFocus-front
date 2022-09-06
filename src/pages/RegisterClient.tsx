@@ -15,6 +15,7 @@ import {
 
 import { registerClient } from "../services/request";
 
+import convertClient from "../utils/ajustTypes";
 import cpfMask from "../utils/cpfMask";
 import isValidCpf from "../utils/validCpf";
 import isValidEmail from "../utils/validEmail";
@@ -39,8 +40,7 @@ const RegisterClient = () => {
 	});
 
 	const validNewClient = async(client:InputClient) => {
-		const clientWithoutMask = {...client};
-		clientWithoutMask.cpf = clientWithoutMask.cpf?.replace(/\D/g,"");
+		const clientWithoutMask = convertClient(client as SendInputClient);
 		const data = await registerClient(clientWithoutMask);
 		if(data.status === 201){
 			return navigate("/clients");

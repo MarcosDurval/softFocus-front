@@ -16,6 +16,8 @@ import {
 
 import { getClientById, updateClient } from "../services/request";
 
+
+import convertClient from "../utils/ajustTypes";
 import cpfMask from "../utils/cpfMask";
 import isValidCpf from "../utils/validCpf";
 import isValidEmail from "../utils/validEmail";
@@ -58,8 +60,7 @@ const EditClient = () => {
 	});
 
 	const validUpdateClient = async(client:InputClient) => {
-		const clientWithoutMask = {...client};
-		clientWithoutMask.cpf = clientWithoutMask.cpf?.replace(/\D/g,"");
+		const clientWithoutMask = convertClient(client as SendInputClient);
 		const data = await updateClient(ID as string,clientWithoutMask);
 		if(data.status === 200){
 			return navigate("/clients");

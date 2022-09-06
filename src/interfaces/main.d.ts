@@ -23,5 +23,15 @@ interface InputClient {
   date?: string
   longitude?: number
   latitude?: number
-  confirme?: boolean
+}
+
+interface SendInputClient {
+  name?: string
+  email?: string
+  cpf?: string
+  type_tillage?: string
+  event?: string
+  date?: string
+  longitude?: string
+  latitude?: string
 }

@@ -1,5 +1,5 @@
 import RegisterClient from "../src/pages/RegisterClient";
-import { screen, cleanup, waitFor } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import {mockPost, failPost, badRequest, conflitPost} from "./__mocks__/status";
 import { vi } from "vitest";
 import renderWithRouter from "./utils";
@@ -7,7 +7,6 @@ import renderWithRouter from "./utils";
 
 afterEach(() => {
 	vi.resetAllMocks();
-	cleanup();
 });
 
 describe("Register Page", () => {
@@ -143,7 +142,7 @@ describe("Register Page", () => {
 			const button = screen.getByText("Enviar") as HTMLInputElement;
 
 			await user.type(name,"NOME");
-			await user.type(cpf,"00000000000"); // cpf gerado aleatoriamente apenas para executar os testes
+			await user.type(cpf,"00000000000");
 			await user.type(date,"2000-01-01");
 			await user.type(email,"user@user.com");
 			await user.type(event,"2");
@@ -221,7 +220,7 @@ describe("Register Page", () => {
 			expect(btnClosed).toBeTruthy();
 		});
 
-		test("it should render message ", async() => {
+		test("it should render message 'Cheque os campos'", async() => {
 
 			vi.stubGlobal("fetch",badRequest);
 
@@ -251,7 +250,7 @@ describe("Register Page", () => {
 			expect(textBad.innerHTML).toMatch(/^Cheque os campos/i);
 		});
 
-		test("it should render message ", async() => {
+		test("it should render message 'não foi possivel'", async() => {
 
 			vi.stubGlobal("fetch",failPost);
 

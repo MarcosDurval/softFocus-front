@@ -18,12 +18,12 @@ Clone o Projeto:
 ```
 git clone: git@github.com:MarcosDurval/softFocus-front.git
 ```
-Acesse diretorio:
+Acesse diretório:
 ```
 cd softFocus-front
 ```
 
-Renomeie o arquivo .env.example para .env  
+Renomeei o arquivo .env.example para .env  
 
 Instale as dependências:
 

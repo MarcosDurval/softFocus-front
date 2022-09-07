@@ -20,6 +20,7 @@ import cpfMask from "../utils/cpfMask";
 import isValidCpf from "../utils/validCpf";
 import isValidEmail from "../utils/validEmail";
 
+import "../styles/pages/register.scss";
 interface responseError {
 	bad: boolean
 	service: boolean
@@ -90,8 +91,8 @@ const RegisterClient = () => {
 	return(
 		<main>
 			<Header />
-			<h1>Cadastro</h1>
-			<form onSubmit={handleSubimit}>
+			<h1 className="text-header">Cadastro</h1>
+			<form id="forms" onSubmit={handleSubimit}>
 				<Name handleChange={handleChange} name={client.name}/>
 				<Email handleChange={handleChange} email={client.email}/>
 				{valid.email ? 
@@ -108,7 +109,7 @@ const RegisterClient = () => {
 				<Event handleChange={handleChange} event={client.event}/>
 				<Latitude handleChange={handleChange} latitude={client.latitude}/>
 				<Longitude handleChange={handleChange} longitude={client.longitude}/>
-				<button type='submit'>Enviar</button>
+				<button id="submit" type="submit">Enviar</button>
 				{modal && <Modal setModal={setModal}/>}
 				{erro.bad && <p data-testid="bd-request">Cheque os campos inseridos</p>}
 				{erro.service && <p data-testid="svc-request">Não foi possivel realizar ação tente novamente mais tarde</p>}

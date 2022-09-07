@@ -1,4 +1,3 @@
-
 const Email = ({handleChange, email}:Change) => {
 	return(
 		<label htmlFor="email">

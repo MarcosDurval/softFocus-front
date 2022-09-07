@@ -1,0 +1,26 @@
+@use "../color" as *;
+
+.client{
+  background-color: $second-color;
+  border-radius: 25px;
+  border: 2px black solid;
+  margin: 5px 0;
+  width: 80vw;
+  justify-content: space-evenly;
+  min-width: 400px;
+  display: flex;
+  padding: 10px 0;
+}
+
+.container-lc{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.group-btn{
+  justify-content: end;
+  button:last-child {
+    margin-left: 10px;
+  }
+}

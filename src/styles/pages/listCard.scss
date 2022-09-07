@@ -1,0 +1,19 @@
+@use "../color" as *;
+
+#events {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-card{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $bg-color;
+}
+
+
+#new-cl{
+  text-decoration: none;
+  color: black;
+}

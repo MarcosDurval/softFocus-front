@@ -1,0 +1,8 @@
+@use "../color" as *;
+
+#header{
+  background-color: $header;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  color: antiquewhite;
+}

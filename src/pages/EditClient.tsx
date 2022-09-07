@@ -116,12 +116,12 @@ const EditClient = () => {
 	return(
 		<main>
 			<Header />
-			<h1>Editar</h1>
+			<h1 className="text-header">Editar</h1>
 			{
 				none ?
-					<h1>Usuario não existe</h1>
+					<h1 className="text-header">Usuario não existe</h1>
 					:
-					<form onSubmit={handleSubimit}>
+					<form id="forms" onSubmit={handleSubimit}>
 						<Name handleChange={handleChange} name={client.name}/>
 						<Email handleChange={handleChange} email={client.email}/>
 						{valid.email ? 
@@ -138,7 +138,7 @@ const EditClient = () => {
 						<Event handleChange={handleChange} event={client.event}/>
 						<Latitude handleChange={handleChange} latitude={client.latitude}/>
 						<Longitude handleChange={handleChange} longitude={client.longitude}/>
-						<button type='submit'>Editar</button>
+						<button id="submit" type="submit">Editar</button>
 						{modal && <Modal setModal={setModal}/>}
 						{erro.bad && <p data-testid="bd-request">Cheque os campos inseridos</p>}
 						{erro.service && <p data-testid="svc-request">Não foi possivel realizar ação tente novamente mais tarde</p>}

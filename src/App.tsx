@@ -1,5 +1,5 @@
 import AllRouters from "./router";
-import "./styles/_base.scss";
+import "./styles/_reset.scss";
 
 function App() {
 	return (

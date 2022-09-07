@@ -1,4 +1,3 @@
-
 const Date = ({handleChange, date}:Change) => {
 	return(
 		<label htmlFor="date">

@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
+import "../styles/components/modal.scss";
 interface Props {
   setModal: Dispatch<SetStateAction<boolean>>
 }
@@ -14,7 +15,7 @@ const Modal = ({setModal}:Props) => {
 		<div className="modal">
 			<div className="container">
 				<p>O Evento diverge de um evento já informado</p>
-				<button onClick={closedModal} data-testid="closedModal">ok</button>
+				<button id="confirm" onClick={closedModal} data-testid="closedModal">ok</button>
 			</div>
 		</div>
 	);

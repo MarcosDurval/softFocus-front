@@ -23,14 +23,14 @@ describe("Client",() => {
 
 			renderWithRouter(<ListClient />, {route: "/clients"});
 			
-			const name = await screen.findAllByText("person");
-			const email = await screen.findAllByText("user@user.com");
-			const event = await screen.findAllByText(/^chuva/i);
-			const cpf = await screen.findAllByText("118.156.849-84");
-			const type_tillage =  await screen.findAllByText("milho");
-			const date = await screen.findAllByText("9 de setembro de 2022");
-			const latitude = await screen.findAllByText("-8.124245");
-			const longitude = await screen.findAllByText("-179.301121");
+			const name = await screen.findAllByText(/person$/);
+			const email = await screen.findAllByText(/user@user.com$/);
+			const event = await screen.findAllByText(/chuva Excessiva$/i);
+			const cpf = await screen.findAllByText(/118.156.849-84$/);
+			const type_tillage =  await screen.findAllByText(/milho$/);
+			const date = await screen.findAllByText(/9 de setembro de 2022$/);
+			const latitude = await screen.findAllByText(/-8.124245$/);
+			const longitude = await screen.findAllByText(/-179.301121$/);
 
 			expect(name).toBeTruthy();
 			expect(email).toBeTruthy();
@@ -75,13 +75,13 @@ describe("Client",() => {
 		
 		const search = await screen.findByLabelText(/^Procurar/i);
 
-		const clientAll = await screen.findAllByText("person");
+		const clientAll = await screen.findAllByText(/person$/i);
 		
 		expect(clientAll.length).toBe(4);
 
 		await user.type(search, "29614430249"); // cpf gerado aleatoriamente apenas para executar os testes
 
-		const client = await screen.findAllByText("person");
+		const client = await screen.findAllByText(/person$/i);
 		
 		expect(client.length).toBe(1);
 	});

@@ -1,4 +1,3 @@
-
 const Longitude = ({handleChange, longitude}:Change) => {
 	return(
 		<label htmlFor="longitude">

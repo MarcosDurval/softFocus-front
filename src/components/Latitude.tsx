@@ -1,4 +1,3 @@
-
 const Latitude = ({handleChange, latitude}:Change) => {
 	return(
 		<label htmlFor="latitude">

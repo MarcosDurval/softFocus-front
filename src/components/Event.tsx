@@ -1,4 +1,3 @@
- 
 const Event = ({handleChange, event}:Change) => {
 	const eventPossible = ["CHUVA EXCESSIVA", "GEADA", "GRANIZO", "SECA", "VENDAVAL", "RAIO"];
 	return(

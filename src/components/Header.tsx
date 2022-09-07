@@ -1,7 +1,9 @@
+import "../styles/components/header.scss";
+
 const Header = () => {
 	return(
-		<header>
-			<h1>CrediLab</h1>
+		<header id="header">
+			<h1>Proagro Fácil</h1>
 		</header>
 	);
 };

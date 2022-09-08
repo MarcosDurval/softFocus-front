@@ -2,16 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-	Cpf,
-	Date,
-	Email,
-	Event,
 	Header,
-	Latitude,
-	Longitude,
-	Modal,
-	Name,
-	Tillage } from "../components";
+	Form,
+} from "../components";
 
 import { registerClient } from "../services/request";
 
@@ -92,28 +85,16 @@ const RegisterClient = () => {
 		<main>
 			<Header />
 			<h1 className="text-header">Cadastro</h1>
-			<form id="forms" onSubmit={handleSubimit}>
-				<Name handleChange={handleChange} name={client.name}/>
-				<Email handleChange={handleChange} email={client.email}/>
-				{valid.email ? 
-					<p data-testid="fail-email" className="alert">Email Inválido</p>
-					: null
-				}
-				<Cpf handleChange={handleChange} cpf={client.cpf}/>
-				{valid.cpf ? 
-					<p data-testid="fail-cpf" className="alert">CPF Inválido</p>
-					: null
-				}
-				<Date handleChange={handleChange} date={client.date}/>
-				<Tillage handleChange={handleChange} type_tillage={client.type_tillage}/>
-				<Event handleChange={handleChange} event={client.event}/>
-				<Latitude handleChange={handleChange} latitude={client.latitude}/>
-				<Longitude handleChange={handleChange} longitude={client.longitude}/>
-				<button id="submit" type="submit">Enviar</button>
-				{modal && <Modal setModal={setModal}/>}
-				{erro.bad && <p data-testid="bd-request">Cheque os campos inseridos</p>}
-				{erro.service && <p data-testid="svc-request">Não foi possivel realizar ação tente novamente mais tarde</p>}
-			</form>
+			<Form 
+				handleChange={handleChange} 
+				client={client}
+				valid={valid}
+				handleSubimit={handleSubimit}
+				setModal={setModal}
+				erro={erro}
+				modal={modal}
+			/>
+			
 		</main>
 	);
 };

@@ -14,6 +14,11 @@ interface Change extends InputClient {
   handleChange: (e:React.HTMLElement) => void
 }
 
+
+interface ChangeGeneric {
+  handleChange: (e:React.HTMLElement) => void
+}
+
 interface InputClient {
   name?: string
   email?: string
